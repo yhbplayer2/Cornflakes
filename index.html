@@ -1,0 +1,153 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameZone</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0b1020;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: #151c32;
+  padding: 30px 15px;
+  text-align: center;
+}
+
+h1 {
+  color: #00e5ff;
+  font-size: 36px;
+}
+
+header p {
+  color: #b7c1d9;
+}
+
+input {
+  width: 90%;
+  max-width: 500px;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+}
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 25px;
+}
+
+.games {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.game {
+  display: block;
+  padding: 25px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background: #19223b;
+  border-radius: 15px;
+  transition: 0.2s;
+}
+
+.game:hover {
+  transform: translateY(-5px);
+  background: #263454;
+}
+
+.icon {
+  font-size: 45px;
+}
+
+.game h2 {
+  font-size: 20px;
+}
+
+.game p {
+  color: #aab8d5;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #aab8d5;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🎮 GameZone</h1>
+  <p>Your browser gaming hub</p>
+  <input id="search" type="search" placeholder="🔍 Search games...">
+</header>
+
+<main>
+  <h2>🔥 All Games</h2>
+
+  <div class="games">
+
+    <a class="game" href="https://example.com" data-name="space game">
+      <div class="icon">🚀</div>
+      <h2>Space Game</h2>
+      <p>Arcade</p>
+    </a>
+
+    <a class="game" href="https://example.com" data-name="racing game">
+      <div class="icon">🏎️</div>
+      <h2>Racing Game</h2>
+      <p>Racing</p>
+    </a>
+
+    <a class="game" href="https://example.com" data-name="puzzle game">
+      <div class="icon">🧩</div>
+      <h2>Puzzle Game</h2>
+      <p>Puzzle</p>
+    </a>
+
+    <a class="game" href="https://example.com" data-name="action game">
+      <div class="icon">⚔️</div>
+      <h2>Action Game</h2>
+      <p>Action</p>
+    </a>
+
+  </div>
+</main>
+
+<footer>
+  GameZone · Made with GitHub Pages
+</footer>
+
+<script>
+const search = document.getElementById("search");
+const games = document.querySelectorAll(".game");
+
+search.addEventListener("input", () => {
+  const query = search.value.toLowerCase();
+
+  games.forEach(game => {
+    game.style.display =
+      game.dataset.name.includes(query) ? "block" : "none";
+  });
+});
+</script>
+
+</body>
+</html>
+```
